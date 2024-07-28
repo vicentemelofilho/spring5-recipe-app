@@ -49,46 +49,46 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         Optional<UnitOfMeasure> eachUomOptional = unitOfMeasureRepository.findByDescription("Each");
 
         if(!eachUomOptional.isPresent()){
-            ////throw new RuntimeException("Expected UOM Not Found");
+            throw new RuntimeException("Expected UOM Not Found");
         }
 
         Optional<UnitOfMeasure> tableSpoonUomOptional = unitOfMeasureRepository.findByDescription("Tablespoon");
 
         if(!tableSpoonUomOptional.isPresent()){
-            ////throw new RuntimeException("Expected UOM Not Found");
+            throw new RuntimeException("Expected UOM Not Found");
         }
 
         Optional<UnitOfMeasure> teaSpoonUomOptional = unitOfMeasureRepository.findByDescription("Teaspoon");
 
         if(!teaSpoonUomOptional.isPresent()){
-            ////throw new RuntimeException("Expected UOM Not Found");
+            throw new RuntimeException("Expected UOM Not Found");
         }
 
         Optional<UnitOfMeasure> dashUomOptional = unitOfMeasureRepository.findByDescription("Dash");
 
         if(!dashUomOptional.isPresent()){
-            ////throw new RuntimeException("Expected UOM Not Found");
+            throw new RuntimeException("Expected UOM Not Found");
         }
 
         Optional<UnitOfMeasure> pintUomOptional = unitOfMeasureRepository.findByDescription("Pint");
 
         if(!pintUomOptional.isPresent()){
-            ////throw new RuntimeException("Expected UOM Not Found");
+            throw new RuntimeException("Expected UOM Not Found");
         }
 
         Optional<UnitOfMeasure> cupsUomOptional = unitOfMeasureRepository.findByDescription("Cup");
 
         if(!cupsUomOptional.isPresent()){
-            ////throw new RuntimeException("Expected UOM Not Found");
+            throw new RuntimeException("Expected UOM Not Found");
         }
 
         //get optionals
-        UnitOfMeasure eachUom = null; //eachUomOptional.get();
-        UnitOfMeasure tableSpoonUom = null; // tableSpoonUomOptional.get();
-        UnitOfMeasure teapoonUom = null; //tableSpoonUomOptional.get();
-        UnitOfMeasure dashUom = null; //dashUomOptional.get();
-        UnitOfMeasure pintUom = null; //pintUomOptional.get();
-        UnitOfMeasure cupsUom = null; //cupsUomOptional.get();
+        UnitOfMeasure eachUom = eachUomOptional.get();
+        UnitOfMeasure tableSpoonUom = tableSpoonUomOptional.get();
+        UnitOfMeasure teapoonUom = tableSpoonUomOptional.get();
+        UnitOfMeasure dashUom = dashUomOptional.get();
+        UnitOfMeasure pintUom = pintUomOptional.get();
+        UnitOfMeasure cupsUom = cupsUomOptional.get();
 
         //get Categories
         Optional<Category> americanCategoryOptional = categoryRepository.findByDescription("American");
